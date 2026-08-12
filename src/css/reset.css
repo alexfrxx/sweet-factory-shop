@@ -38,23 +38,27 @@
   font-display: swap;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin: 0;
-}
-
-p:last-child {
-  margin-bottom: 0;
-}
-
-ul {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'WorkSans', sans-serif;
+  background-color: #f5fdfd;
+}
+
+ul,
+ol {
   list-style: none;
 }
 
@@ -71,8 +75,4 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-}
-
-html {
-  scroll-behavior: smooth;
 }
