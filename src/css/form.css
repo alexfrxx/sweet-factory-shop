@@ -187,6 +187,7 @@
   .modal-form__window {
     max-width: 768px;
     padding: 64px;
+    background: rgba(245, 253, 253, 0.7);
   }
 
   .modal-form__title {

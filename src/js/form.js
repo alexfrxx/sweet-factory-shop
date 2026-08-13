@@ -66,7 +66,7 @@ form?.addEventListener('submit', async event => {
 
   const isValid = fields.map(validateField).every(Boolean);
   if (!isValid) {
-    fields.find(field => !field.validity.valid)?.focus();
+    fields.find(field => getErrorMessage(field))?.focus();
     return;
   }
 
