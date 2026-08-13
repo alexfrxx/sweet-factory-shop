@@ -26,7 +26,7 @@
   max-width: 335px;
   margin: auto;
   background: #f5fdfd;
-  border-radius: 24px;
+  border-radius: 16px;
   padding: 64px 20px;
   display: flex;
   flex-direction: column;
@@ -35,8 +35,8 @@
 
 .modal-form__close {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
   width: 32px;
   height: 32px;
   display: flex;
@@ -60,6 +60,7 @@
   font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
+  letter-spacing: -0.01em;
   text-align: center;
   color: #080c0c;
 }
@@ -87,8 +88,8 @@
 .modal-form__input,
 .modal-form__textarea {
   width: 100%;
-  border: 1px solid #080c0c;
-  border-radius: 8px;
+  border: 2px solid #080c0c;
+  border-radius: 12px;
   padding: 8px 12px;
   background: transparent;
   font-family: 'Work Sans', sans-serif;
@@ -118,17 +119,19 @@
 }
 
 .modal-form__input {
-  height: 44px;
+  height: 40px;
 }
 
 .modal-form__textarea {
-  height: 184px;
+  height: 180px;
+  padding: 12px;
   resize: none;
 }
 
 .modal-form__submit {
   width: 100%;
-  height: 46px;
+  height: 44px;
+  padding: 10px 24px;
   border-radius: 999px;
   border: 1px solid #f19898;
   background: #f19898;
@@ -165,8 +168,13 @@
     padding: 64px 32px;
   }
 
+  .modal-form__close {
+    top: 16px;
+    right: 16px;
+  }
+
   .modal-form__submit {
-    width: 346px;
+    width: 344px;
     align-self: center;
   }
 }
@@ -178,11 +186,17 @@
 
   .modal-form__window {
     max-width: 768px;
-    padding: 64px 32px;
+    padding: 64px;
+  }
+
+  .modal-form__title {
+    font-size: 48px;
   }
 
   .modal-form__submit {
-    width: 346px;
+    width: auto;
+    height: auto;
+    padding: 10px 28.5px;
     align-self: center;
   }
 }
