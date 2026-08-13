@@ -1,0 +1,158 @@
+.modal-form {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 20px;
+  overflow-y: auto;
+}
+
+.modal-form[hidden] {
+  display: none;
+}
+
+.modal-form__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.modal-form__window {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 335px;
+  margin: auto;
+  background: #f5fdfd;
+  border-radius: 24px;
+  padding: 64px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.modal-form__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #080c0c;
+  cursor: pointer;
+}
+
+.modal-form__close-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.modal-form__title {
+  margin: 0;
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  color: #080c0c;
+}
+
+.modal-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-form__label {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #080c0c;
+}
+
+.modal-form__input,
+.modal-form__textarea {
+  width: 100%;
+  border: 1px solid #080c0c;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background: transparent;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #080c0c;
+}
+
+.modal-form__input::placeholder,
+.modal-form__textarea::placeholder {
+  color: rgba(8, 12, 12, 0.6);
+}
+
+.modal-form__input {
+  height: 44px;
+}
+
+.modal-form__textarea {
+  height: 184px;
+  resize: none;
+}
+
+.modal-form__submit {
+  width: 100%;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid #f19898;
+  background: #f19898;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #080c0c;
+  cursor: pointer;
+}
+
+.modal-form__submit:hover {
+  background: transparent;
+  border-color: #080c0c;
+}
+
+.modal-form__submit:active {
+  background: #f5b6b6;
+  border-color: #080c0c;
+}
+
+.modal-form__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media only screen and (min-width: 768px) {
+  .modal-form {
+    padding: 64px 32px;
+  }
+
+  .modal-form__window {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+
+  .modal-form__submit {
+    width: 346px;
+    align-self: center;
+  }
+}
