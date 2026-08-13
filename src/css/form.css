@@ -170,3 +170,19 @@
     align-self: center;
   }
 }
+
+@media only screen and (min-width: 1440px) {
+  .modal-form {
+    padding: 64px 32px;
+  }
+
+  .modal-form__window {
+    max-width: 768px;
+    padding: 64px 32px;
+  }
+
+  .modal-form__submit {
+    width: 346px;
+    align-self: center;
+  }
+}

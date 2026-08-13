@@ -35,9 +35,13 @@ document.addEventListener('keydown', event => {
 
 const fields = form ? [...form.querySelectorAll('.modal-form__input, .modal-form__textarea')] : [];
 
+const PHONE_REGEX = /^380\d{9}$/;
+
 const getErrorMessage = field => {
   if (field.validity.valueMissing) return 'Заповніть це поле';
-  if (field.validity.patternMismatch) return field.title || 'Невірний формат';
+  if (field.type === 'tel' && !PHONE_REGEX.test(field.value.replace(/\D/g, ''))) {
+    return field.title || 'Невірний формат';
+  }
   return '';
 };
 
@@ -48,7 +52,7 @@ const setFieldError = (field, message) => {
 };
 
 const validateField = field => {
-  const message = field.validity.valid ? '' : getErrorMessage(field);
+  const message = getErrorMessage(field);
   setFieldError(field, message);
   return !message;
 };

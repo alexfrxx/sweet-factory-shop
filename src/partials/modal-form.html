@@ -1,13 +1,30 @@
 <div class="modal-form" id="modal-form" hidden>
   <div class="modal-form__overlay" data-modal-close></div>
-  <div class="modal-form__window" role="dialog" aria-modal="true" aria-labelledby="modal-form-title">
-    <button class="modal-form__close" type="button" data-modal-close aria-label="Закрити">
-      <svg class="modal-form__close-icon" width="24" height="24" aria-hidden="true">
+  <div
+    class="modal-form__window"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-form-title"
+  >
+    <button
+      class="modal-form__close"
+      type="button"
+      data-modal-close
+      aria-label="Закрити"
+    >
+      <svg
+        class="modal-form__close-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
         <use href="../img/sprite.svg#cross"></use>
       </svg>
     </button>
 
-    <h2 class="modal-form__title" id="modal-form-title">Офомлення замовлення</h2>
+    <h2 class="modal-form__title" id="modal-form-title">
+      Офомлення замовлення
+    </h2>
 
     <form class="modal-form__form">
       <div class="modal-form__field">
@@ -33,7 +50,6 @@
           name="phone"
           placeholder="+38 0__ ___ __ __"
           autocomplete="tel"
-          pattern="\+?380\d{9}"
           title="Формат: +380XXXXXXXXX"
           required
         />
@@ -41,7 +57,9 @@
       </div>
 
       <div class="modal-form__field">
-        <label class="modal-form__label" for="modal-form-comment">Коментар*</label>
+        <label class="modal-form__label" for="modal-form-comment"
+          >Коментар*</label
+        >
         <textarea
           class="modal-form__textarea"
           id="modal-form-comment"
