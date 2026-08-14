@@ -3,64 +3,64 @@
    ========================================== */
 
 /* ==========================================
-   SECTION TITLE
+   SECTION TITLE & SUBTITLE
    ========================================== */
 
 .desserts-title {
     font-family: "Comfortaa", sans-serif;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 1.2;
     letter-spacing: -0.01em;
     text-align: center;
     color: #080c0c;
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
+    width: 100%;
+    /* Spans full width on all screens */
 }
 
-/* Mobile adaptive: 375px */
 @media screen and (min-width: 375px) {
     .desserts-title {
-        font-size: 32px;
-        margin-bottom: 32px;
+        font-size: 28px;
+        margin-bottom: 28px;
     }
 }
 
-/* Tablet: 768px */
 @media screen and (min-width: 768px) {
     .desserts-title {
-        font-size: 48px;
-        margin-bottom: 40px;
+        font-size: 40px;
+        margin-bottom: 36px;
     }
 }
 
-/* ==========================================
-   SECTION SUBTITLE
-   ========================================== */
-
 .desserts-subtitle {
-    font-family: "Work Sans", sans-serif;
+    font-family: "WorkSans", sans-serif;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 1.5;
+    font-size: 13px;
+    line-height: 1.4;
     text-align: center;
     color: #080c0c;
-    margin: 0 auto 24px auto;
+    margin: 0 auto 20px auto;
     max-width: 480px;
 }
 
-/* Mobile adaptive: 375px */
 @media screen and (min-width: 375px) {
     .desserts-subtitle {
-        font-size: 16px;
-        margin-bottom: 32px;
+        font-size: 15px;
+        margin-bottom: 28px;
     }
 }
 
-/* Tablet: 768px */
 @media screen and (min-width: 768px) {
     .desserts-subtitle {
-        font-size: 18px;
-        margin-bottom: 40px;
+        font-size: 16px;
+        text-align: left;
+        margin: 0;
+        max-width: 320px;
+        /* Limits width for clean line breaks next to dropdown */
+        overflow-wrap: break-word;
+        padding-top: 2px;
+        /* Aligns top text edge with dropdown border */
     }
 }
 
@@ -68,25 +68,48 @@
     padding: 32px 0;
 }
 
-/* Mobile adaptive: 375px */
 @media screen and (min-width: 375px) {
     .desserts-section {
         padding: 40px 0;
     }
 }
 
-/* Tablet: 768px */
 @media screen and (min-width: 768px) {
     .desserts-section {
         padding: 60px 0;
     }
+
+    /* Flex layout to align subtitle & dropdown on tablet */
+    .desserts-section .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        /* Aligns elements by top edge */
+        justify-content: space-between;
+    }
 }
 
 /* ==========================================
-   CATEGORIES (SELECT FOR MOBILE/TABLET & LIST FOR DESKTOP)
+   CATEGORIES (SELECT & LIST)
    ========================================== */
 
-/* Dropdown Select (Visible on Mobile & Tablet by default) */
+/* Category Wrapper Container */
+.categories-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+    .categories-wrapper {
+        width: auto;
+        margin: 0 0 40px auto;
+        /* Pushes dropdown to the far right */
+        justify-content: flex-end;
+    }
+}
+
 .category-select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -97,26 +120,25 @@
     height: 40px;
     box-sizing: border-box;
     padding: 8px 36px 8px 12px;
-    margin: 0 auto 32px auto;
+    margin: 0;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 500;
     color: #080c0c;
 
-    background-color: rgba(255, 255, 255, 0);
+    background-color: transparent;
     border: 2px solid #080c0c;
     border-radius: 6px;
     cursor: pointer;
     outline: none;
 
-    /* Custom dropdown arrow icon */
     background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23080c0c' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 12px center;
     background-size: 12px 8px;
 
-    transition: border-color 250ms ease, box-shadow 250ms ease;
+    transition: border-color 0.4s ease;
 }
 
 .category-select:focus,
@@ -124,21 +146,7 @@
     border-color: #f19898;
 }
 
-/* Mobile adaptive: 375px */
-@media screen and (min-width: 375px) {
-    .category-select {
-        font-size: 14px;
-    }
-}
-
-/* Tablet: 768px */
-@media screen and (min-width: 768px) {
-    .category-select {
-        margin-bottom: 40px;
-    }
-}
-
-/* Categories List (Hidden on Mobile & Tablet) */
+/* Base category list styling (Hidden on mobile/tablet) */
 .category-list {
     display: none;
     align-items: center;
@@ -148,26 +156,11 @@
     margin: 0 0 32px 0;
 }
 
-/* Desktop: 1440px (Hide Select, Show Buttons List) */
-@media screen and (min-width: 1440px) {
-    .category-select {
-        display: none;
-    }
-
-    .category-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
-        margin-bottom: 40px;
-    }
-}
-
 .category-item {
     flex-shrink: 0;
 }
 
-/* Category Button (Default state) */
+/* Category Button Base Styles */
 .category-btn {
     box-sizing: border-box;
     display: inline-flex;
@@ -176,27 +169,79 @@
 
     border: 2px solid #080c0c;
     border-radius: 100px;
-    padding: 10px 24px;
-    min-height: 44px;
-    width: fit-content;
+    padding: 8px 20px;
+    min-height: 40px;
 
     font-family: inherit;
+    font-size: 14px;
     font-weight: 500;
     color: #080c0c;
     background-color: transparent;
     cursor: pointer;
-    transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 .category-btn:not(.active):hover {
     background-color: rgba(8, 12, 12, 0.05);
 }
 
-/* Active Category Button */
+/* Active Category State */
 .category-btn.active {
     background-color: #f19898;
-    color: #ffffff;
+    color: #080c0c;
     border-color: #f19898;
+}
+
+/* ==========================================
+   DESKTOP OVERRIDES (FROM 1440px)
+   ========================================== */
+
+@media screen and (min-width: 1440px) {
+
+    /* Resets container back to normal block layout */
+    .desserts-section .container {
+        display: block;
+    }
+
+    /* Resets subtitle to centered position */
+    .desserts-subtitle {
+        font-size: 18px;
+        text-align: center;
+        max-width: 480px;
+        margin: 0 auto 40px auto;
+        padding-top: 0;
+    }
+
+    /* KEEP WRAPPER VISIBLE, BUT RESET MARGINS */
+    .categories-wrapper {
+        display: block !important;
+        width: 100%;
+        margin: 0 0 48px 0;
+    }
+
+    /* HIDE ONLY THE SELECT DROPDOWN */
+    .category-select {
+        display: none !important;
+    }
+
+    /* SHOW AND CENTER THE CATEGORY BUTTONS LIST */
+    .category-list {
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    /* RESTORE DESKTOP BUTTON SIZES */
+    .category-btn {
+        font-size: 16px;
+        padding: 10px 24px;
+        min-height: 44px;
+    }
 }
 
 /* ==========================================
@@ -210,22 +255,21 @@
     padding: 0;
     margin: 0;
     list-style: none;
+    width: 100%;
+    /* Spans full width on all screens */
 }
 
-/* Mobile fluid: 320px+ (1 card per row) */
 .desserts-item {
     width: 100%;
     display: flex;
 }
 
-/* Tablet: 768px+ (2 cards per row) */
 @media screen and (min-width: 768px) {
     .desserts-item {
         width: calc((100% - 24px) / 2);
     }
 }
 
-/* Desktop: 1440px+ (4 cards per row) */
 @media screen and (min-width: 1440px) {
     .desserts-item {
         width: calc((100% - 3 * 24px) / 4);
@@ -235,12 +279,11 @@
 /* Dessert Card */
 .dessert-card {
     width: 100%;
-    min-height: 415px;
+    min-height: 400px;
     background-color: #f5fdfd;
     border: 1px solid #080c0c;
     border-radius: 16px;
     padding: 16px;
-    background-clip: padding-box;
     overflow: hidden;
 
     display: flex;
@@ -276,26 +319,26 @@
 }
 
 .dessert-card-category {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.4;
     color: #525454;
     margin: 0 0 6px 0;
 }
 
 .dessert-card-title {
-    font-size: 20px;
+    font-family: "WorkSans", sans-serif;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.3;
     color: #080c0c;
     margin: 0 0 8px 0;
 }
 
-/* Truncate long descriptions to fit design layout */
 .dessert-card-description {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 1.5;
     color: #202424;
-    margin: 0 0 20px 0;
+    margin: 0 0 16px 0;
     flex-grow: 1;
 
     display: -webkit-box;
@@ -312,12 +355,12 @@
 }
 
 .dessert-card-price {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #080c0c;
 }
 
-/* Card Action Button (Modal Trigger) */
+/* Card Action Button */
 .dessert-card-btn {
     width: 44px;
     height: 44px;
@@ -333,15 +376,14 @@
     cursor: pointer;
     box-sizing: border-box;
 
-    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, transform 0.25s ease;
 }
 
-/* Hover & Focus state matching theme primary color */
 .dessert-card-btn:hover,
 .dessert-card-btn:focus-visible {
     background-color: #f19898;
-    border-color: #f19898;
-    color: #ffffff;
+    border-color: #080c0c;
+    color: #080c0c;
     transform: scale(1.05);
 }
 
@@ -360,40 +402,20 @@
     margin: 32px auto 0 auto;
     padding: 12px 32px;
     min-height: 48px;
-
-    border: 2px solid #f19898;
-    border-radius: 100px;
-    background-color: #f19898;
-    color: #ffffff;
-
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-
-    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    width: auto;
+    font-size: 15px;
 }
 
-/* Tablet: 768px */
 @media screen and (min-width: 768px) {
     .load-more-btn {
         margin-top: 40px;
     }
 }
 
-.load-more-btn:hover,
-.load-more-btn:focus-visible {
-    background-color: #e08383;
-    border-color: #e08383;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(241, 152, 152, 0.3);
-}
-
 /* ==========================================
    LOADER (SPINNER)
    ========================================== */
 
-/* Utility class to hide the loader */
 .loader-hidden {
     display: none !important;
 }

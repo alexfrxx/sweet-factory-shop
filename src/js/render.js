@@ -36,8 +36,10 @@ function createCardMarkup(dessert) {
           <div class="dessert-card-footer">
             <span class="dessert-card-price">${price} ₴</span>
 
+            <!-- Modal trigger button with js-open-modal class and dataset ID -->
+
             <button 
-              class="dessert-card-btn" 
+              class="dessert-card-btn js-open-modal" 
               type="button" 
               data-id="${_id}"
               aria-label="Order ${name} dessert"

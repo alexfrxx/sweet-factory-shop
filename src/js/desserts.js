@@ -7,9 +7,10 @@ import { createDessertCardsMarkup, createCategoriesMarkup } from './render.js';
 /* ==========================================
    DOM ELEMENTS
    ========================================== */
-const dessertsList = document.querySelector('.desserts-list');
-const loadMoreBtn = document.querySelector('.load-more-btn');
+const dessertsList = document.querySelector('.js-desserts-list');
+const loadMoreBtn = document.querySelector('.js-load-more');
 const loader = document.querySelector('.js-loader');
+const categoriesWrapper = document.querySelector('.js-categories-wrapper');
 
 /* ==========================================
    STATE VARIABLES
@@ -37,22 +38,12 @@ function toggleLoader(show) {
 async function initDessertsSection() {
   try {
     const categories = await getCategories();
-    
-    // Safely target or replace existing category element without overwriting title/cards
-    let categoriesWrapper = document.querySelector('.desserts-categories-wrapper');
-    const existingCategoryList = document.querySelector('.category-list');
-
-    if (!categoriesWrapper && existingCategoryList) {
-      // Create a dedicated wrapper if it doesn't exist yet
-      categoriesWrapper = document.createElement('div');
-      categoriesWrapper.className = 'desserts-categories-wrapper';
-      existingCategoryList.parentNode.insertBefore(categoriesWrapper, existingCategoryList);
-      existingCategoryList.remove();
-    }
 
     if (categoriesWrapper) {
       categoriesWrapper.innerHTML = createCategoriesMarkup(categories);
       setupCategoryEventListeners();
+    } else {
+      console.error('Клас .js-categories-wrapper не знайдено в DOM');
     }
 
     if (loadMoreBtn) {
