@@ -1,8 +1,4 @@
 .hero {
-  width: 100%;
-  max-width: 375px;
-  margin: 0 auto;
-  min-height: 100vh;
   padding-top: 156px;
   padding-bottom: 156px;
   padding-left: 0;
@@ -24,12 +20,10 @@
 }
 
 .hero-title {
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 24px;
   max-width: 335px;
-  font-family: 'Comfortaa', sans-serif;
   color: #ffffff;
   font-weight: 700;
   font-size: 40px;
@@ -39,12 +33,10 @@
 }
 
 .hero-text {
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 32px;
   max-width: 335px;
-  font-family: 'Work Sans', sans-serif;
   color: #ffffff;
   font-weight: 400;
   font-size: 18px;
@@ -53,21 +45,17 @@
 }
 
 .hero-button {
-  display: flex;
-  width: 100%;
-  max-width: none;
   justify-content: center;
   align-items: center;
   margin-left: auto;
   margin-right: auto;
   cursor: pointer;
   color: #080c0c;
-  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   background-color: #f19898;
-  border: 1px solid #f19898;
+  border: 2px solid #f19898;
   border-radius: 100px;
   padding: 10px 24px;
   text-decoration: none;
@@ -87,21 +75,12 @@
   background-color: #c07979;
 }
 
-.hero-button:disabled {
-  background-color: #f19898;
-  opacity: 0.3;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 /* hero tablet*/
 @media screen and (min-width: 768px) {
   .hero {
     max-width: 768px;
-
     padding-top: 325px;
     padding-bottom: 325px;
-
     background-image: url('../img/hero/hero-tablet-1x.webp');
   }
 }
@@ -128,10 +107,8 @@
 @media screen and (min-width: 1158px) {
   .hero {
     max-width: 1440px;
-
     padding-top: 224px;
     padding-bottom: 360px;
-
     background-image: url('../img/hero/hero-desktop-1x.webp');
   }
 
