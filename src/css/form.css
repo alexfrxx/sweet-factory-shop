@@ -14,6 +14,8 @@
 
 .modal-form__overlay {
   position: fixed;
+  top: 0;
+  left: 0;
   inset: 0;
   background: rgba(0, 0, 0, 0.25);
 }
@@ -156,7 +158,6 @@
   .modal-form__window {
     max-width: 768px;
     padding: 64px;
-    background: rgba(245, 253, 253, 0.7);
   }
 
   .modal-form__title {
