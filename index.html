@@ -57,9 +57,25 @@
     />
     <title>Sweet Factory</title>
     <script type="module" crossorigin src="/sweet-factory-shop/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/sweet-factory-shop/assets/index-CwavkBXM.css">
+    <link rel="modulepreload" crossorigin href="/sweet-factory-shop/assets/vendor-BOGmpjFQ.js">
+    <link rel="stylesheet" crossorigin href="/sweet-factory-shop/assets/vendor-DnveWo0P.css">
+    <link rel="stylesheet" crossorigin href="/sweet-factory-shop/assets/index-Ddmdifcx.css">
   </head>
   <body>
+    <!--
+      TEMP FOR TESTING ONLY — видалити разом з цим коментарем, кнопкою і data-dessert-id
+      нижче, коли modal-deserts матиме свою реальну кнопку "Перейти до замовлення"
+      з правильним id десерту.
+    -->
+    <button
+      type="button"
+      data-modal-target="modal-form"
+      data-dessert-id="6852a9fcb459460cb6b47720"
+      style="position: fixed; top: 8px; left: 8px; z-index: 2000"
+    >
+      TEST open modal-form
+    </button>
+
     
 
     <main>
@@ -85,7 +101,83 @@
     
 
     
-    
+    <div class="modal-form" id="modal-form" hidden>
+  <div class="modal-form__overlay" data-modal-close></div>
+  <div
+    class="modal-form__window"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-form-title"
+  >
+    <button
+      class="modal-form__close"
+      type="button"
+      data-modal-close
+      aria-label="Закрити"
+    >
+      <svg
+        class="modal-form__close-icon"
+        width="24"
+        height="24"
+        aria-hidden="true"
+      >
+        <use href="../img/sprite.svg#cross"></use>
+      </svg>
+    </button>
+
+    <h2 class="modal-form__title" id="modal-form-title">
+      Офомлення замовлення
+    </h2>
+
+    <form class="modal-form__form">
+      <div class="modal-form__field">
+        <label class="modal-form__label" for="modal-form-name">Ім’я*</label>
+        <input
+          class="modal-form__input"
+          type="text"
+          id="modal-form-name"
+          name="name"
+          placeholder="Вікторія"
+          autocomplete="name"
+          required
+        />
+        <span class="modal-form__error"></span>
+      </div>
+
+      <div class="modal-form__field">
+        <label class="modal-form__label" for="modal-form-phone">Телефон*</label>
+        <input
+          class="modal-form__input"
+          type="tel"
+          id="modal-form-phone"
+          name="phone"
+          placeholder="+38 0__ ___ __ __"
+          autocomplete="tel"
+          title="Формат: +380XXXXXXXXX"
+          required
+        />
+        <span class="modal-form__error"></span>
+      </div>
+
+      <div class="modal-form__field">
+        <label class="modal-form__label" for="modal-form-comment"
+          >Коментар*</label
+        >
+        <textarea
+          class="modal-form__textarea"
+          id="modal-form-comment"
+          name="comment"
+          placeholder="Ваш коментар"
+          required
+        ></textarea>
+        <span class="modal-form__error"></span>
+      </div>
+
+      <button class="modal-form__submit" type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
+
 
   </body>
 </html>
