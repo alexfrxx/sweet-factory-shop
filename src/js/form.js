@@ -1,3 +1,4 @@
+import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
@@ -7,11 +8,13 @@ const modal = document.getElementById('modal-form');
 const form = modal?.querySelector('.modal-form__form');
 
 const openModal = () => {
+  if (!modal) return;
   modal.hidden = false;
   document.body.style.overflow = 'hidden';
 };
 
 const closeModal = () => {
+  if (!modal) return;
   modal.hidden = true;
   document.body.style.overflow = '';
 };
@@ -30,7 +33,7 @@ document.addEventListener('click', event => {
 });
 
 document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && !modal.hidden) closeModal();
+  if (event.key === 'Escape' && modal && !modal.hidden) closeModal();
 });
 
 const fields = form ? [...form.querySelectorAll('.modal-form__input, .modal-form__textarea')] : [];
@@ -81,27 +84,18 @@ form?.addEventListener('submit', async event => {
   submitButton.disabled = true;
 
   try {
-    const response = await fetch(ORDERS_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    });
-
-    const body = await response.json().catch(() => null);
-
-    if (!response.ok) {
-      throw new Error(body?.message || 'Не вдалося оформити замовлення');
-    }
+    const { data } = await axios.post(ORDERS_URL, payload);
 
     iziToast.success({
       title: 'Готово',
-      message: `Замовлення №${body.orderNum} на "${body.dessertName}" успішно оформлено!`,
+      message: `Замовлення №${data.orderNum} на "${data.dessertName}" успішно оформлено!`,
     });
     form.reset();
     fields.forEach(field => setFieldError(field, ''));
     closeModal();
   } catch (error) {
-    iziToast.error({ title: 'Помилка', message: error.message });
+    const message = error.response?.data?.message || 'Не вдалося оформити замовлення';
+    iziToast.error({ title: 'Помилка', message });
   } finally {
     submitButton.disabled = false;
   }
