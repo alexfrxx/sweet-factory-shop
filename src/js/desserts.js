@@ -4,25 +4,16 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { getDesserts, getCategories } from './axios.js';
 import { createDessertCardsMarkup, createCategoriesMarkup } from './render.js';
 
-/* ==========================================
-   DOM ELEMENTS
-   ========================================== */
 const dessertsList = document.querySelector('.js-desserts-list');
 const loadMoreBtn = document.querySelector('.js-load-more');
 const loader = document.querySelector('.js-loader');
 const categoriesWrapper = document.querySelector('.js-categories-wrapper');
 
-/* ==========================================
-   STATE VARIABLES
-   ========================================== */
 let currentPage = 1;
 let currentCategory = 'all';
 const LIMIT = 8;
 let isLoading = false;
 
-/* ==========================================
-   LOADER TOGGLE HELPER
-   ========================================== */
 function toggleLoader(show) {
   if (!loader) return;
   if (show) {
@@ -32,9 +23,6 @@ function toggleLoader(show) {
   }
 }
 
-/* ==========================================
-   SECTION INITIALIZATION
-   ========================================== */
 async function initDessertsSection() {
   try {
     const categories = await getCategories();
@@ -57,9 +45,6 @@ async function initDessertsSection() {
   }
 }
 
-/* ==========================================
-   CATEGORY EVENT LISTENERS & SYNCHRONIZATION
-   ========================================== */
 function setupCategoryEventListeners() {
   const categorySelect = document.querySelector('#category-select');
   const categoryList = document.querySelector('#category-list');
@@ -88,7 +73,9 @@ async function onCategorySelectChange(event) {
     const activeBtn = categoryList.querySelector('.category-btn.active');
     if (activeBtn) activeBtn.classList.remove('active');
 
-    const targetBtn = categoryList.querySelector(`.category-btn[data-category="${selectedCategory}"]`);
+    const targetBtn = categoryList.querySelector(
+      `.category-btn[data-category="${selectedCategory}"]`
+    );
     if (targetBtn) targetBtn.classList.add('active');
   }
 
@@ -103,7 +90,8 @@ async function onCategorySelectChange(event) {
  */
 async function onCategoryClick(event) {
   const categoryBtn = event.target.closest('.category-btn');
-  if (!categoryBtn || categoryBtn.classList.contains('active') || isLoading) return;
+  if (!categoryBtn || categoryBtn.classList.contains('active') || isLoading)
+    return;
 
   const selectedCategory = categoryBtn.dataset.category;
 
@@ -114,7 +102,6 @@ async function onCategoryClick(event) {
   }
   categoryBtn.classList.add('active');
 
-  // Sync mobile <select> value
   const categorySelect = document.querySelector('#category-select');
   if (categorySelect) {
     categorySelect.value = selectedCategory;
@@ -126,9 +113,6 @@ async function onCategoryClick(event) {
   await fetchAndRenderDesserts();
 }
 
-/* ==========================================
-   PAGINATION
-   ========================================== */
 async function onLoadMoreClick() {
   if (isLoading) return;
   currentPage += 1;
@@ -136,9 +120,6 @@ async function onLoadMoreClick() {
   smoothScrollAfterLoad();
 }
 
-/* ==========================================
-   FETCH & RENDER DESSERTS CARDS
-   ========================================== */
 export async function fetchAndRenderDesserts() {
   if (isLoading) return;
 
@@ -152,7 +133,8 @@ export async function fetchAndRenderDesserts() {
 
     if (desserts.length === 0 && currentPage === 1) {
       if (dessertsList) {
-        dessertsList.innerHTML = '<p class="no-desserts">На жаль, десертів у цій категорії не знайдено.</p>';
+        dessertsList.innerHTML =
+          '<p class="no-desserts">На жаль, десертів у цій категорії не знайдено.</p>';
       }
       if (loadMoreBtn) loadMoreBtn.style.display = 'none';
       return;
@@ -176,7 +158,6 @@ export async function fetchAndRenderDesserts() {
         loadMoreBtn.style.display = 'block';
       }
     }
-
   } catch (error) {
     console.error('Error loading desserts:', error);
     showErrorMessage('Server error. Failed to load desserts.');
@@ -186,9 +167,6 @@ export async function fetchAndRenderDesserts() {
   }
 }
 
-/* ==========================================
-   IZITOAST ERROR DISPLAY HELPER
-   ========================================== */
 function showErrorMessage(message) {
   iziToast.error({
     title: 'Error',
@@ -200,9 +178,6 @@ function showErrorMessage(message) {
   });
 }
 
-/* ==========================================
-   SMOOTH SCROLL AFTER LOAD MORE
-   ========================================== */
 function smoothScrollAfterLoad() {
   const firstCard = dessertsList?.firstElementChild;
   if (!firstCard) return;

@@ -1,16 +1,6 @@
-/* ==========================================
-   DESSERT CARD MARKUP GENERATOR
-   ========================================== */
-
-/**
- * Creates HTML markup for a single dessert card.
- * @param {Object} dessert - Dessert data object from API
- * @returns {string} HTML markup string for dessert item
- */
 function createCardMarkup(dessert) {
   const { _id, name, category, description, price, image } = dessert;
 
-  // Extract category name if category is an object
   const categoryName = typeof category === 'object' ? category.name : category;
 
   return `
@@ -29,17 +19,17 @@ function createCardMarkup(dessert) {
         </div>
 
         <div class="dessert-card-content">
-          <p class="dessert-card-category">${categoryName}</p>
-          <h3 class="dessert-card-title">${name}</h3>
-          <p class="dessert-card-description">${description}</p>
+        <div class="dessert-card-wrapper">
+        <p class="dessert-card-category">${categoryName}</p>
+        <h3 class="dessert-card-title">${name}</h3>
+        <p class="dessert-card-description">${description}</p>
+        </div>
 
           <div class="dessert-card-footer">
             <span class="dessert-card-price">${price} ₴</span>
 
-            <!-- Modal trigger button with js-open-modal class and dataset ID -->
-
             <button 
-              class="dessert-card-btn js-open-modal" 
+              class="dessert-card-btn btn js-open-modal" 
               type="button" 
               data-id="${_id}"
               aria-label="Order ${name} dessert"
@@ -56,37 +46,17 @@ function createCardMarkup(dessert) {
   `;
 }
 
-/* ==========================================
-   EXPORT: GENERATE DESSERT CARDS LIST
-   ========================================== */
-
-/**
- * Creates HTML markup for a list of dessert cards.
- * @param {Array} desserts - Array of dessert objects
- * @returns {string} HTML markup string
- */
 export function createDessertCardsMarkup(desserts = []) {
   return desserts.map(createCardMarkup).join('');
 }
 
-/* ==========================================
-   EXPORT: GENERATE CATEGORIES MARKUP
-   (DROPDOWN FOR MOBILE/TABLET & BUTTONS FOR DESKTOP)
-   ========================================== */
-
-/**
- * Creates HTML markup for both category dropdown (<select>) and category list (<ul>).
- * CSS handles visibility based on layout breakpoints.
- * @param {Array} categories - Array of category objects or strings
- * @returns {string} Combined HTML markup string
- */
 export function createCategoriesMarkup(categories = []) {
   // 1. Generate options for <select> element (Mobile & Tablet)
   const selectDefaultOption = `<option value="all" selected>Всі десерти</option>`;
-  
+
   const selectOptions = categories
     .map(cat => {
-      const categoryId = typeof cat === 'object' ? (cat._id || cat.name) : cat;
+      const categoryId = typeof cat === 'object' ? cat._id || cat.name : cat;
       const categoryName = typeof cat === 'object' ? cat.name : cat;
 
       return `<option value="${categoryId}">${categoryName}</option>`;
@@ -103,7 +73,7 @@ export function createCategoriesMarkup(categories = []) {
   // 2. Generate buttons for <ul> list (Desktop)
   const allCategoryBtn = `
     <li class="category-item">
-      <button type="button" class="category-btn active" data-category="all">
+      <button type="button" class="btn category-btn active" data-category="all">
         Всі десерти
       </button>
     </li>
@@ -111,7 +81,7 @@ export function createCategoriesMarkup(categories = []) {
 
   const categoriesBtns = categories
     .map(cat => {
-      const categoryId = typeof cat === 'object' ? (cat._id || cat.name) : cat;
+      const categoryId = typeof cat === 'object' ? cat._id || cat.name : cat;
       const categoryName = typeof cat === 'object' ? cat.name : cat;
 
       return `

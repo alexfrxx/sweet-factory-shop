@@ -1,21 +1,22 @@
-<!-- Desserts section -->
 <section class="desserts-section" id="desserts">
-    <div class="container">
-        <h2 class="desserts-title">Солодощі</h2>
-        <p class="desserts-subtitle">Спробуйте наші смачні десерти, які вас здивують!</p>
+  <div class="container">
+    <div class="desserts-container">
+      <h2 class="desserts-title">Солодощі</h2>
+      <div class="tablet-category-wrapper">
+        <p class="desserts-subtitle">
+          Спробуйте наші смачні десерти, які вас здивують!
+        </p>
 
-        <!-- Categories wrapper: JS inserts both <select> (mobile/tablet) and <ul> (desktop) here -->
         <div class="categories-wrapper js-categories-wrapper"></div>
+      </div>
 
-        <!-- Desserts cards grid container -->
-        <ul class="desserts-list js-desserts-list"></ul>
+      <ul class="desserts-list js-desserts-list"></ul>
 
-        <!-- Loader element (CSS spinner) -->
-        <span class="loader js-loader loader-hidden"></span>
+      <span class="loader js-loader loader-hidden"></span>
 
-        <!-- Load more pagination button -->
-        <button type="button" class="btn load-more-btn js-load-more">
-            Завантажити ще
-        </button>
+      <button type="button" class="btn load-more-btn js-load-more">
+        Завантажити ще
+      </button>
     </div>
+  </div>
 </section>
