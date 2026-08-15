@@ -1,0 +1,230 @@
+.footer {
+    background: #9ff1ef;
+    width: 100%;
+}
+
+.footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 48px 0;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 309px;
+    padding: 33px 0;
+    height: auto;
+    text-decoration: none;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.footer-logo:hover {
+    opacity: 0.8;
+}
+
+.logo-icon {
+    fill: #080c0c;
+    width: min(82.4vw, 309px);
+    height: auto;
+}
+
+.footer-nav {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #080c0c;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #080c0c;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+    transition:
+        transform 0.3s ease-in-out,
+        color 0.3s ease-in-out,
+        opacity 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+}
+
+.footer-nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #080c0c;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.footer-nav a:hover::after,
+.footer-nav a:focus::after {
+    transform: scaleX(1);
+}
+
+.footer-nav a:active {
+    color: #c07979;
+}
+
+.footer-nav a:active::after {
+    background-color: #c07979;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 12px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    text-decoration: none;
+    transition:
+        transform 0.3s ease-in-out,
+        background-color 0.3s ease-in-out;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+    transform: scale(1.1);
+    background-color: #f19898;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    fill: #080c0c;
+    transition: fill 0.3s ease-in-out;
+}
+
+.footer-social a:active .social-icon {
+    fill: #c07979;
+}
+
+.footer-divider {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.footer-copyright {
+    border-top: solid 2px #080c0c;
+    width: 100%;
+    max-width: 335px;
+    box-sizing: border-box;
+}
+
+.footer-text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--color-scheme-3-text);
+    text-align: center;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .footer .container {
+        padding: 64px 40px;
+    }
+
+    .footer-social {
+        margin-bottom: 40px;
+    }
+
+    /* .footer-content {
+    flex-direction: row;
+  } */
+    .footer-nav ul {
+        flex-direction: row;
+        gap: 32px;
+    }
+
+    .footer-copyright {
+        max-width: 704px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .footer .container {
+        max-width: 1312px;
+        padding: 40px 0;
+        gap: 40px;
+    }
+
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-nav {
+        font-size: 14px;
+    }
+
+    .footer-social {
+        margin-bottom: 0;
+    }
+
+    .footer-social a {
+        margin-bottom: 0;
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .footer-divider {
+        margin-top: 0;
+    }
+
+    .footer-copyright {
+        max-width: 100%;
+    }
+}
