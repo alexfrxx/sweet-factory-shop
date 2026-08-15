@@ -1,3 +1,6 @@
+// Import SVG sprite via Vite
+import spriteUrl from '../img/sprite.svg';
+
 function createCardMarkup(dessert) {
   const { _id, name, category, description, price, image } = dessert;
 
@@ -35,7 +38,7 @@ function createCardMarkup(dessert) {
               aria-label="Order ${name} dessert"
             >
               <svg class="dessert-card-icon" width="24" height="24">
-                <use href="./img/sprite.svg#arrow-up"></use>
+                 <use href="${spriteUrl}#arrow-up"></use>
               </svg>
             </button>
           </div>
