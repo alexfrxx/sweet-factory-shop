@@ -4,11 +4,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const aboutUsSwiper = new Swiper('.swiper', {
+const aboutUsSwiper = new Swiper('.about-swiper', {
   modules: [Navigation, Pagination],
 
-  slidesPerView: 2,
-  spaceBetween: 24,
+  enabled: false,
   loop: true,
   direction: 'horizontal',
 
@@ -25,6 +24,8 @@ const aboutUsSwiper = new Swiper('.swiper', {
   breakpoints: {
     768: {
       enabled: true,
+      slidesPerView: 2,
+      spaceBetween: 24,
     },
   },
 });
