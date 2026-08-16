@@ -52,7 +52,7 @@
   transform: rotate(180deg);
 }
 
-.ac-trigger h3 {
+.ac-trigger span {
   max-width: 90%;
   font-weight: 600;
   font-size: 18px;
