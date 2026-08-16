@@ -1,7 +1,7 @@
 import Accordion from 'accordion-js';
 import 'accordion-js/dist/accordion.min.css';
 
-new Accordion('.faq__list', {
+new Accordion('.faq-list', {
   duration: 300,
   showMultiple: false,
   openOnInit: [0],
@@ -10,7 +10,7 @@ new Accordion('.faq__list', {
   panelClass: 'ac-panel',
   activeClass: 'is-active',
   beforeOpen: currentElement => {
-    const items = document.querySelectorAll('.faq__item');
+    const items = document.querySelectorAll('.faq-item');
     items.forEach(item => {
       if (item !== currentElement) {
         item.classList.remove('is-active');
