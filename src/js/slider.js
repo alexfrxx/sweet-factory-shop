@@ -1,34 +1,30 @@
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
-const aboutUsSlider = new Splide('#slider-about', {
-  type: 'loop',
-  perPage: 3,
-  perMove: 1,
-  gap: 24,
-  pagination: true,
-  arrows: true,
+const aboutUsSwiper = new Swiper('.swiper', {
+  modules: [Navigation, Pagination],
+
+  slidesPerView: 2,
+  spaceBetween: 24,
+  loop: true,
+  direction: 'horizontal',
+
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
 
   breakpoints: {
     768: {
-      destroy: true,
+      enabled: true,
     },
   },
 });
-
-aboutUsSlider.mount();
-
-const prev = document.querySelector('.splide__arrow--prev');
-const next = document.querySelector('.splide__arrow--next');
-
-prev.innerHTML = `
-  <svg width="24" height="24">
-    <use href="../img/sprite.svg#arrow-right"></use>
-  </svg>
-  `;
-
-next.innerHTML = `
-<svg width="24" height="24">
-    <use href="../img/sprite.svg#arrow-right"></use>
-  </svg>
-`;
