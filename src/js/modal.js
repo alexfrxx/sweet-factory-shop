@@ -17,6 +17,18 @@ const modal = document.querySelector('#desserts-modal');
 const closeModalBtn = modal.querySelector('[data-modal-close]');
 const orderBtn = modal.querySelector('.desserts-modal-btn');
 
+const loader = document.querySelector('.js-loader');
+
+function toggleLoader(show) {
+  if (!loader) return;
+
+  if (show) {
+    loader.classList.remove('loader-hidden');
+  } else {
+    loader.classList.add('loader-hidden');
+  }
+}
+
 dessertsList.addEventListener('click', onOpenModal);
 
 async function onOpenModal(event) {
@@ -25,6 +37,9 @@ async function onOpenModal(event) {
   if (!btn) return;
 
   const id = btn.dataset.id;
+
+  loader.classList.add('modal-loader');
+  toggleLoader(true);
 
   try {
     const dessert = await getDessertById(id);
@@ -52,6 +67,9 @@ async function onOpenModal(event) {
       position: 'topRight',
       timeout: 4000,
     });
+  } finally {
+    toggleLoader(false);
+    loader.classList.remove('modal-loader');
   }
 }
 

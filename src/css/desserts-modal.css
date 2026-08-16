@@ -105,6 +105,15 @@
   padding: 10px 24px;
 }
 
+.modal-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1100;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
 @media only screen and (min-width: 768px) {
   .desserts-modal-container {
     max-width: 704px;
