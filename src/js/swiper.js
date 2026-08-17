@@ -17,8 +17,8 @@ const aboutUsSwiper = new Swiper('.about-swiper', {
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.about-button-next',
+    prevEl: '.about-button-prev',
   },
 
   breakpoints: {
