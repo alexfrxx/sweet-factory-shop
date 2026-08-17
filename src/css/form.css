@@ -131,6 +131,7 @@
 @media only screen and (min-width: 768px) {
   .modal-form {
     padding: 64px 32px;
+    overflow-y: none;
   }
 
   .modal-form-window {
