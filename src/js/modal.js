@@ -116,7 +116,7 @@ function onBackdropClick(event) {
 }
 
 function onEscapePress(event) {
-  if (event.key === 'Escape' && !modal.hidden) {
+  if (event.key === 'Escape' && modal && !modal.hidden) {
     onCloseModal();
   }
 }

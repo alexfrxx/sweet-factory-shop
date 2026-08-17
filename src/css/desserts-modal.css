@@ -74,8 +74,6 @@
   fill: #080c0c;
 }
 .desserts-modal-descr {
-  font-family: 'Work Sans', sans-serif;
-
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
@@ -83,8 +81,6 @@
   margin-bottom: 24px;
 }
 .desserts-modal-ingredients {
-  font-family: 'Work Sans', sans-serif;
-
   font-weight: 400;
   font-size: 14px;
   line-height: 1.5;
@@ -100,7 +96,7 @@
   line-height: 1.5;
   color: #080c0c;
 
-  width: 295px;
+  width: 100%;
   height: 44px;
   padding: 10px 24px;
 }
@@ -121,16 +117,16 @@
   }
   .desserts-modal-btn {
     width: 310px;
-    height: 44px;
   }
 }
 
 @media only screen and (min-width: 1440px) {
   .desserts-modal-container {
     max-width: 1312px;
-    padding: 64px;
+    padding: 64px 64px 112px 64px;
 
     display: flex;
+    align-items: center;
     gap: 24px;
   }
 
@@ -142,10 +138,8 @@
   }
 
   .desserts-modal-content {
-    width: 580px;
     display: flex;
     flex-direction: column;
-    padding-top: 40px;
   }
 
   .desserts-modal-title {
@@ -157,6 +151,6 @@
   }
 
   .desserts-modal-btn {
-    width: 312px;
+    height: 52px;
   }
 }
