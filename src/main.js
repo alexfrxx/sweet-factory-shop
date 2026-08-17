@@ -7,4 +7,4 @@ import './js/faq';
 import './js/form';
 import './js/modal';
 import './js/render';
-import './js/slider';
+import './js/swiper';
