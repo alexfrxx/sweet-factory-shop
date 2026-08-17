@@ -12,13 +12,13 @@ const aboutUsSwiper = new Swiper('.about-swiper', {
   direction: 'horizontal',
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.about-pagination',
     clickable: true,
   },
 
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
+    nextEl: '.about-button-next',
+    prevEl: '.aboutr-button-prev',
   },
 
   breakpoints: {

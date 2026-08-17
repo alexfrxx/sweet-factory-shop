@@ -25,7 +25,7 @@
   display: none;
 }
 
-section .swiper-pagination {
+.about-swiper .about-viewport .swiper-pagination {
   position: static;
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ section .swiper-pagination {
   margin-top: 48px;
 }
 
-section .swiper-pagination-bullet {
+.about-swiper .about-viewport .swiper-pagination-bullet {
   border-radius: 100%;
   width: 8px;
   height: 8px;
@@ -43,7 +43,7 @@ section .swiper-pagination-bullet {
   opacity: 0.2;
 }
 
-section .swiper-pagination-bullet-active {
+.about-swiper .about-viewport .swiper-pagination-bullet-active {
   opacity: 1;
   background-color: #080c0c;
   transform: none;
