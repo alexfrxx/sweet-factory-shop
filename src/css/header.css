@@ -73,7 +73,7 @@
   transform: translateX(0);
 }
 
-.mobile-menu-item a {
+.header-link {
   display: block;
   color: #080c0c;
   font-size: 14px;
@@ -115,13 +115,22 @@
     align-items: center;
   }
 
-  .nav-item a {
+  .header-link {
+    position: relative;
     display: inline-block;
     padding: 24px 0;
     font-weight: 400;
     font-size: 16px;
     line-height: 1.5;
     color: #080c0c;
+  }
+
+  .header-link::after {
+    bottom: 21px;
+  }
+
+  .header-link:active::after {
+    bottom: 24px;
   }
 
   .mobile-menu {
