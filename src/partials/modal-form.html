@@ -1,19 +1,19 @@
 <div class="modal-form" id="modal-form" hidden>
-  <div class="modal-form__overlay" data-modal-close></div>
+  <div class="modal-form-overlay" data-modal-close></div>
   <div
-    class="modal-form__window"
+    class="modal-form-window"
     role="dialog"
     aria-modal="true"
     aria-labelledby="modal-form-title"
   >
     <button
-      class="modal-form__close"
+      class="modal-form-close"
       type="button"
       data-modal-close
       aria-label="Закрити"
     >
       <svg
-        class="modal-form__close-icon"
+        class="modal-form-close-icon"
         width="24"
         height="24"
         aria-hidden="true"
@@ -22,15 +22,13 @@
       </svg>
     </button>
 
-    <h2 class="modal-form__title" id="modal-form-title">
-      Офомлення замовлення
-    </h2>
+    <h2 class="modal-form-title" id="modal-form-title">Офомлення замовлення</h2>
 
-    <form class="modal-form__form">
-      <div class="modal-form__field">
-        <label class="modal-form__label" for="modal-form-name">Ім’я*</label>
+    <form class="modal-form-form">
+      <div class="modal-form-field">
+        <label class="modal-form-label" for="modal-form-name">Ім’я*</label>
         <input
-          class="modal-form__input"
+          class="modal-form-input"
           type="text"
           id="modal-form-name"
           name="name"
@@ -38,13 +36,13 @@
           autocomplete="name"
           required
         />
-        <span class="modal-form__error"></span>
+        <span class="modal-form-error"></span>
       </div>
 
-      <div class="modal-form__field">
-        <label class="modal-form__label" for="modal-form-phone">Телефон*</label>
+      <div class="modal-form-field">
+        <label class="modal-form-label" for="modal-form-phone">Телефон*</label>
         <input
-          class="modal-form__input"
+          class="modal-form-input"
           type="tel"
           id="modal-form-phone"
           name="phone"
@@ -53,24 +51,24 @@
           title="Формат: +380XXXXXXXXX"
           required
         />
-        <span class="modal-form__error"></span>
+        <span class="modal-form-error"></span>
       </div>
 
-      <div class="modal-form__field">
-        <label class="modal-form__label" for="modal-form-comment"
+      <div class="modal-form-field">
+        <label class="modal-form-label" for="modal-form-comment"
           >Коментар*</label
         >
         <textarea
-          class="modal-form__textarea"
+          class="modal-form-textarea"
           id="modal-form-comment"
           name="comment"
           placeholder="Ваш коментар"
           required
         ></textarea>
-        <span class="modal-form__error"></span>
+        <span class="modal-form-error"></span>
       </div>
 
-      <button class="modal-form__submit btn" type="submit">
+      <button class="modal-form-submit btn" type="submit">
         Надіслати заявку
       </button>
     </form>
