@@ -1,0 +1,251 @@
+html {
+    scroll-behavior: smooth;
+    }
+
+.header {
+    width: 100%;
+position: relative;
+z-index: 10;
+    background-color: #f4ffff;
+}
+
+.header-container {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+   
+}
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.logo img {
+    display: block;
+    width: 120px;
+    height: auto; 
+}
+
+.logo-icon {
+    display: block;
+    width: 97px; 
+    height: 24px; 
+}
+
+/* NAVIGATION DESKTOP */
+
+.nav {
+    margin-left: auto;
+    margin-right: 32px;
+}
+
+.nav-list {
+    display: flex;
+    align-items:center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none; 
+}
+
+.nav-item a {
+    text-decoration: none;
+    color:#080C0C;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.5;
+    transition: color 250ms ease;
+}
+
+.nav-item a:hover,
+.nav-item a:focus {
+    color: #F5B6B6; 
+}
+
+.nav-item a:active {
+    color: #C07979; 
+}
+
+/* BOUTON DESKTOP */
+
+.header-btn {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 112px;
+    height: 34px;
+
+    padding: 0 22px;
+    border-radius: 100px;
+    background-color:#F5B6B6;
+    border: 2px solid transparent ;
+    background-color: #f5b6b6;
+    color: #080C0C;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease;
+}
+
+.header-btn:hover,
+.header-btn:focus {
+    background-color: #ffffff;
+    border-color: #080C0C;
+}
+
+.header-btn:active {
+    color: #C07979;
+    border-color: #080C0C; 
+}
+
+.header-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;  
+}
+
+/* BURGER */
+
+.burger-btn {
+    display: none;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid #080c0c;
+    background-color: transparent;
+    font-size: 24px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+/* MOBILE MENU */
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999; 
+    width: 330px;
+    max-width: 100%;
+    height: 100vh;
+    padding: 28px 20px;
+    background-color: #f4ffff;
+    transform: translateX(100%);
+    transition: transform 250ms ease;
+}
+
+.close-btn {
+    display: block;
+    background: transparent;
+    margin-left: auto;
+    margin-bottom: 40px;
+    padding: 0;
+    border: none;
+    color: #080c0c;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.mobile-menu-list {
+    list-style: none;
+    margin: 0 0 28px; 
+    padding: 0;
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);  
+}
+.mobile-menu-item:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+
+
+.mobile-menu-item a {
+    text-decoration: none;
+    text-decoration: none;
+    color: #080c0c;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Bouton dans le menu mobile */
+
+.mobile-menu .header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+    padding: 0 22px;
+    border-radius: 100px;
+    background-color: #f5b6b6;
+    border: 2px solid transparent;
+    color: #080c0c;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* MOBILE*/
+
+@media screen and (max-width: 767px) {
+   .nav {
+    display: none;
+   }
+
+   .header-container {
+    height: 60px;
+    padding-left: 16px;
+    padding-right: 16px;
+   }
+
+   .header-container > .header-btn {
+    display: none;
+   }
+
+   .burger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   }
+   .header {
+    padding: 0;
+   }
+}
+
+/* TABLET AND DESKTOP*/
+
+@media screen and (min-width: 768px) {
+    .burger-btn {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;   
+    }
+}
+
+/* DESKTOP*/
+
+@media screen and (min-width: 1440px) {
+    .header-container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+    .nav-list {
+        gap: 40px;
+    }
+}
