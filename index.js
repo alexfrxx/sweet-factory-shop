@@ -38,7 +38,7 @@ import{a as j,i as h,A as H,S as x,N as A,P as _}from"./assets/vendor-C4KMXNvd.j
 
       </article>
     </li>
-  `}function K(e=[]){return e.map(V).join("")}function G(e=[]){const t='<option value="all" selected>Всі десерти</option>',o=e.map(n=>{const m=typeof n=="object"?n._id||n.name:n,S=typeof n=="object"?n.name:n;return`<option value="${m}">${S}</option>`}).join(""),s=`
+  `}function K(e=[]){return e.map(V).join("")}function G(e=[]){const t='<option value="all" selected>Всі десерти</option>',o=e.map(n=>{const m=typeof n=="object"?n._id||n.name:n,w=typeof n=="object"?n.name:n;return`<option value="${m}">${w}</option>`}).join(""),s=`
     <select class="category-select" id="category-select" aria-label="Select dessert category">
       ${t}
       ${o}
@@ -49,10 +49,10 @@ import{a as j,i as h,A as H,S as x,N as A,P as _}from"./assets/vendor-C4KMXNvd.j
         Всі десерти
       </button>
     </li>
-  `,a=e.map(n=>{const m=typeof n=="object"?n._id||n.name:n,S=typeof n=="object"?n.name:n;return`
+  `,a=e.map(n=>{const m=typeof n=="object"?n._id||n.name:n,w=typeof n=="object"?n.name:n;return`
         <li class="category-item">
           <button type="button" class="category-btn" data-category="${m}">
-            ${S}
+            ${w}
           </button>
         </li>
       `}).join(""),i=`
@@ -64,5 +64,5 @@ import{a as j,i as h,A as H,S as x,N as A,P as _}from"./assets/vendor-C4KMXNvd.j
       <svg class="rating-star-svg" width="16" height="16">
         <use href="${O}#${a}"></use>
       </svg>
-    `}return s}le.addEventListener("click",w);u.addEventListener("click",me);document.addEventListener("keydown",fe);function w(){u.hidden=!0,document.body.style.overflow=""}function me(e){e.target===u&&w()}function fe(e){e.key==="Escape"&&u&&!u.hidden&&w()}T.addEventListener("click",ge);function ge(){w()}new x(".about-swiper",{modules:[A,_],enabled:!1,loop:!0,direction:"horizontal",pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".swiper-button-next",prevEl:".swiper-button-prev"},breakpoints:{768:{enabled:!0,slidesPerView:2,spaceBetween:24}}});
+    `}return s}le.addEventListener("click",S);u.addEventListener("click",me);document.addEventListener("keydown",fe);function S(){u.hidden=!0,document.body.style.overflow=""}function me(e){e.target===u&&S()}function fe(e){e.key==="Escape"&&u&&!u.hidden&&S()}T.addEventListener("click",ge);function ge(){S()}new x(".about-swiper",{modules:[A,_],enabled:!1,loop:!0,direction:"horizontal",pagination:{el:".swiper-pagination",clickable:!0},navigation:{nextEl:".about-button-next",prevEl:".about-button-prev"},breakpoints:{768:{enabled:!0,slidesPerView:2,spaceBetween:24}}});
 //# sourceMappingURL=index.js.map
