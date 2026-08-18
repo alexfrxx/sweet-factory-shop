@@ -1,4 +1,3 @@
-
 import { getFeedbacks } from './axios.js';
 
 const feedbackList = document.querySelector('.feedback-list');
@@ -26,27 +25,27 @@ function renderFeedbacks(feedbacks) {
     .map(feedback => {
       return `
       <li class="feedback-item">
-        <div class="feedback-card">
+
         <div class="feedback-rating">
   ${createStars(feedback.rate)}
-</div>
+        </div>
 
           <p class="feedback-description">${feedback.description}</p>
           <p class="feedback-author">${feedback.author}</p>
           
-        </div>
+
       </li>
     `;
     })
     .join('');
 
- feedbackList.innerHTML = markup;
+  feedbackList.innerHTML = markup;
 }
 
 async function initFeedback() {
   try {
     const data = await getFeedbacks();
-
+    console.log(data);
     renderFeedbacks(data.feedbacks);
   } catch (error) {
     console.error(error);
