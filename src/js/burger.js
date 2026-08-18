@@ -1,12 +1,15 @@
 const burger = document.querySelector('.mobile-menu');
 const burgerBtn = document.querySelector('.burger-btn');
 const closeBtn = document.querySelector('.close-btn');
+const orderBtn = document.querySelector('.header-btn');
 
 burgerBtn.addEventListener('click', openMenu);
 closeBtn.addEventListener('click', closeMenu);
 
 burger.addEventListener('click', e => {
   if (e.target.classList.contains('header-link')) closeMenu();
+
+  if (e.target.classList.contains('header-btn')) closeMenu();
 });
 
 document.addEventListener('keydown', onEscapeClick);
