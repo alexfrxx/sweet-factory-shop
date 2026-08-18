@@ -1,37 +1,20 @@
 import { getFeedbacks } from './axios.js';
+import { createRatingMarkup } from './modal.js';
 
 const feedbackList = document.querySelector('.feedback-list');
 
-function createStars(rate) {
-  const rating = Number(rate);
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-
-  return Array.from({ length: 5 }, (_, index) => {
-    if (index < fullStars) {
-      return `<i class="star-icon filled">★</i>`;
-    }
-
-    if (index === fullStars && hasHalfStar) {
-      return `<i class="star-icon half">★</i>`;
-    }
-
-    return `<i class="star-icon">★</i>`;
-  }).join('');
-}
-
 function renderFeedbacks(feedbacks) {
   const markup = feedbacks
-    .map(feedback => {
+    .map(({ rate, description, author }) => {
       return `
       <li class="swiper-slide feedback-item">
 
         <div class="feedback-rating">
-  ${createStars(feedback.rate)}
+        ${createRatingMarkup(rate)}
         </div>
 
-          <p class="feedback-description">${feedback.description}</p>
-          <p class="feedback-author">${feedback.author}</p>
+          <p class="feedback-description">${description}</p>
+          <p class="feedback-author">${author}</p>
           
 
       </li>
@@ -40,6 +23,8 @@ function renderFeedbacks(feedbacks) {
     .join('');
 
   feedbackList.innerHTML = markup;
+
+  createRatingMarkup();
 }
 
 async function initFeedback() {

@@ -74,7 +74,7 @@ async function onOpenModal(event) {
 }
 
 ////////// RATING
-function createRatingMarkup(rate) {
+export function createRatingMarkup(rate) {
   const fullStars = Math.floor(rate);
   const hasHalfStar = rate % 1 !== 0;
 
