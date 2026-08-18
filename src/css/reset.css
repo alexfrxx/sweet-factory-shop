@@ -82,7 +82,7 @@ a {
   font-size: 16px;
   line-height: 1.5;
   background-color: #f19898;
-  border: 1px solid #f19898;
+  border: 2px solid #f19898;
   border-radius: 100px;
 }
 
@@ -109,4 +109,39 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+.link {
+  position: relative;
+  transition:
+    transform 0.4s ease,
+    color 0.4s ease,
+    opacity 0.4s ease,
+    background-color 0.4s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 1px;
+  background-color: #080c0c;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.link:hover::after,
+.link:focus::after {
+  transform: scaleX(1);
+}
+
+.link:active {
+  color: #c07979;
+}
+
+.link:active::after {
+  background-color: #c07979;
+  bottom: 0;
 }

@@ -1,0 +1,137 @@
+.about-section {
+  padding: 64px 0;
+}
+
+.about-section .container {
+  overflow: visible;
+}
+
+.about-container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+}
+
+.about-container .swiper-button {
+  display: none;
+  position: absolute;
+  border: 2px solid #080c0c;
+  border-radius: 100px;
+  padding: 12px;
+  justify-content: center;
+  background-color: #f5fdfd;
+  opacity: 1;
+  margin: 0;
+  z-index: 999;
+}
+
+.about-container .about-button-prev {
+  left: -28px;
+}
+.about-container .about-button-next {
+  right: -28px;
+}
+
+.about-container .swiper-button-prev::after,
+.about-container .swiper-button-next::after {
+  display: none;
+}
+
+.about-container .swiper-pagination {
+  display: none;
+  position: static;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 100%;
+  padding: 10px 0;
+  margin-top: 48px;
+}
+
+.about-container .swiper-pagination-bullet {
+  border-radius: 100%;
+  width: 8px;
+  height: 8px;
+  background-color: #080c0c;
+  opacity: 0.2;
+}
+
+.about-container .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #080c0c;
+  transform: none;
+}
+
+.about-title {
+  font-family: 'Comfortaa', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 24px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #080c0c;
+}
+
+.about-description {
+  margin: 0 0 40px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  color: #080c0c;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+
+.gallery-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .about-container .swiper-pagination {
+    display: flex;
+  }
+
+  .about-container .swiper-button {
+    display: flex;
+    bottom: 184px;
+  }
+
+  .gallery-list {
+    flex-direction: row;
+  }
+
+  .gallery-list > li {
+    width: calc((100% - 24px) / 2);
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .about-section {
+    padding: 80px 0;
+  }
+
+  .about-container .swiper-button {
+    bottom: 272px;
+  }
+
+  .about-title {
+    font-size: 48px;
+  }
+}

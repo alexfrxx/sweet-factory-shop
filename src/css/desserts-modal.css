@@ -1,0 +1,164 @@
+.desserts-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 20px;
+  overflow-y: auto;
+
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.desserts-modal-backdrop[hidden] {
+  display: none;
+}
+
+.desserts-modal-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 335px;
+  padding: 64px 20px;
+
+  background: #f5fdfd;
+  border-radius: 16px;
+}
+
+.desserts-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  color: #080c0c;
+  cursor: pointer;
+}
+.desserts-modal-img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 24px;
+}
+.desserts-modal-title {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #080c0c;
+
+  margin-bottom: 8px;
+}
+.desserts-modal-price {
+  font-family: 'Comfortaa', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #080c0c;
+  margin-bottom: 24px;
+}
+.modal-wrap-rating {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+.rating-star-svg {
+  width: 16px;
+  height: 16px;
+  fill: #080c0c;
+}
+.desserts-modal-descr {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #080c0c;
+  margin-bottom: 24px;
+}
+.desserts-modal-ingredients {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #080c0c;
+  margin-bottom: 24px;
+}
+.desserts-modal-ingredients span {
+  font-weight: 700;
+}
+.desserts-modal-btn {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #080c0c;
+
+  width: 100%;
+  height: 44px;
+  padding: 10px 24px;
+}
+
+.modal-loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 1100;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 768px) {
+  .desserts-modal-backdrop {
+    align-items: center;
+  }
+
+  .desserts-modal-container {
+    max-width: 704px;
+    padding: 64px 32px;
+  }
+  .desserts-modal-btn {
+    width: 310px;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .desserts-modal-container {
+    max-width: 1312px;
+    padding: 64px 64px 112px 64px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .desserts-modal-img {
+    width: 580px;
+    height: 435px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+  }
+
+  .desserts-modal-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desserts-modal-title {
+    font-size: 40px;
+  }
+
+  .desserts-modal-price {
+    font-size: 24px;
+  }
+
+  .desserts-modal-btn {
+    height: 52px;
+  }
+}

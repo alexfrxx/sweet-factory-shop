@@ -5,7 +5,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 const ORDERS_URL = 'https://deserts-store.b.goit.study/api/orders';
 
 const modal = document.getElementById('modal-form');
-const form = modal?.querySelector('.modal-form__form');
+const form = modal?.querySelector('.modal-form-form');
 
 const openModal = () => {
   if (!modal) return;
@@ -27,7 +27,8 @@ document.addEventListener('click', event => {
 
   const opener = event.target.closest('[data-modal-target="modal-form"]');
   if (opener) {
-    if (opener.dataset.dessertId) modal.dataset.dessertId = opener.dataset.dessertId;
+    if (opener.dataset.dessertId)
+      modal.dataset.dessertId = opener.dataset.dessertId;
     openModal();
   }
 });
@@ -36,13 +37,18 @@ document.addEventListener('keydown', event => {
   if (event.key === 'Escape' && modal && !modal.hidden) closeModal();
 });
 
-const fields = form ? [...form.querySelectorAll('.modal-form__input, .modal-form__textarea')] : [];
+const fields = form
+  ? [...form.querySelectorAll('.modal-form-input, .modal-form-textarea')]
+  : [];
 
 const PHONE_REGEX = /^380\d{9}$/;
 
 const getErrorMessage = field => {
   if (field.validity.valueMissing) return 'Заповніть це поле';
-  if (field.type === 'tel' && !PHONE_REGEX.test(field.value.replace(/\D/g, ''))) {
+  if (
+    field.type === 'tel' &&
+    !PHONE_REGEX.test(field.value.replace(/\D/g, ''))
+  ) {
     return field.title || 'Невірний формат';
   }
   return '';
@@ -50,7 +56,7 @@ const getErrorMessage = field => {
 
 const setFieldError = (field, message) => {
   field.classList.toggle('is-invalid', Boolean(message));
-  const errorEl = field.parentElement.querySelector('.modal-form__error');
+  const errorEl = field.parentElement.querySelector('.modal-form-error');
   if (errorEl) errorEl.textContent = message;
 };
 
@@ -73,7 +79,7 @@ form?.addEventListener('submit', async event => {
     return;
   }
 
-  const submitButton = form.querySelector('.modal-form__submit');
+  const submitButton = form.querySelector('.modal-form-submit');
   const payload = {
     name: form.name.value.trim(),
     phone: form.phone.value.replace(/\D/g, ''),
@@ -94,7 +100,8 @@ form?.addEventListener('submit', async event => {
     fields.forEach(field => setFieldError(field, ''));
     closeModal();
   } catch (error) {
-    const message = error.response?.data?.message || 'Не вдалося оформити замовлення';
+    const message =
+      error.response?.data?.message || 'Не вдалося оформити замовлення';
     iziToast.error({ title: 'Помилка', message });
   } finally {
     submitButton.disabled = false;
