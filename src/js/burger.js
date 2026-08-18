@@ -20,9 +20,11 @@ function onEscapeClick(e) {
 function openMenu() {
   burger.classList.add('is-open');
   burgerBtn.setAttribute('aria-expanded', 'true');
+  document.body.classList.add('no-scroll');
 }
 
 function closeMenu() {
   burger.classList.remove('is-open');
   burgerBtn.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('no-scroll');
 }

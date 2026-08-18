@@ -1,5 +1,4 @@
 .hero {
-  max-width: 1440px;
   margin: 0 auto;
   width: 100%;
   margin: 0 auto;
@@ -24,7 +23,7 @@
 }
 
 .hero-title {
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
   max-width: 335px;
   color: #ffffff;
   font-weight: 700;
@@ -79,14 +78,15 @@
   max-width: 219px;
 }
 
-@media screen and (min-width: 1158px) {
+@media screen and (min-width: 1440px) {
   .hero {
-    padding-top: 224px;
-    padding-bottom: 360px;
+    padding-top: 306px;
+    padding-bottom: 306px;
+    max-width: 1440px;
     background-image: url('../img/hero/hero-desktop-1x.webp');
   }
 
-  @media screen and (min-width: 1158px) and (min-resolution: 2x) {
+  @media screen and (min-width: 1440px) and (min-resolution: 2x) {
     .hero {
       background-image: url('../img/hero/hero-desktop-2x.webp');
     }
