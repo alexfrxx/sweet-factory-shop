@@ -1,20 +1,56 @@
-import { getFeedbacks } from './axios';
 
-async function initFeedback() {
-  const data = await getFeedbacks();
+import { getFeedbacks } from './axios.js';
 
-  const feedbacks = data.feedbacks.map(feedback => {
-    return `
-      <li class="swiper-slide">
-        ${feedback.author}
-        ${feedback.rate}
-        ${feedback.description}
+const feedbackList = document.querySelector('.feedback-list');
+
+function createStars(rate) {
+  const rating = Number(rate);
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
+  return Array.from({ length: 5 }, (_, index) => {
+    if (index < fullStars) {
+      return `<i class="star-icon filled">★</i>`;
+    }
+
+    if (index === fullStars && hasHalfStar) {
+      return `<i class="star-icon half">★</i>`;
+    }
+
+    return `<i class="star-icon">★</i>`;
+  }).join('');
+}
+
+function renderFeedbacks(feedbacks) {
+  const markup = feedbacks
+    .map(feedback => {
+      return `
+      <li class="feedback-item">
+        <div class="feedback-card">
+        <div class="feedback-rating">
+  ${createStars(feedback.rate)}
+</div>
+
+          <p class="feedback-description">${feedback.description}</p>
+          <p class="feedback-author">${feedback.author}</p>
+          
+        </div>
       </li>
     `;
-  });
+    })
+    .join('');
 
-  const swiperWrapper = document.querySelector('.swiper-wrapper');
-  swiperWrapper.innerHTML = feedbacks.join('');
+ feedbackList.innerHTML = markup;
+}
+
+async function initFeedback() {
+  try {
+    const data = await getFeedbacks();
+
+    renderFeedbacks(data.feedbacks);
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 initFeedback();
