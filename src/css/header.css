@@ -80,6 +80,7 @@
   font-weight: 400;
   line-height: 1.5;
   padding: 12px 0;
+  width: fit-content;
 }
 
 .mobile-menu .header-btn {
