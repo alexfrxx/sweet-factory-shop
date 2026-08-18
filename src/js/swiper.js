@@ -12,7 +12,7 @@ const aboutUsSwiper = new Swiper('.about-swiper', {
   direction: 'horizontal',
 
   pagination: {
-    el: '.swiper-pagination',
+    el: '.about-section .swiper-pagination',
     clickable: true,
   },
 
@@ -26,6 +26,31 @@ const aboutUsSwiper = new Swiper('.about-swiper', {
       enabled: true,
       slidesPerView: 2,
       spaceBetween: 24,
+    },
+  },
+});
+
+const feedbackSwiper = new Swiper('.feedback-swiper', {
+  modules: [Navigation, Pagination],
+
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  direction: 'horizontal',
+
+  pagination: {
+    el: '.feedback .swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.feedback-button-next',
+    prevEl: '.feedback-button-prev',
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 3,
     },
   },
 });
