@@ -27,3 +27,14 @@ export async function getDessertById(id) {
   const response = await api.get(`/desserts/${id}`);
   return response.data;
 }
+
+export async function getFeedbacks(limit = 10, page = 1) {
+  const response = await api.get('/feedbacks', {
+    params: {
+      limit,
+      page,
+    },
+  });
+
+  return response.data;
+}
