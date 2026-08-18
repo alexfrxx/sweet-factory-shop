@@ -28,7 +28,7 @@ export async function getDessertById(id) {
   return response.data;
 }
 
-export async function getFeedbacks(limit = 10, page = 1) {
+export async function getFeedbacks(limit = 6, page = 1) {
   const response = await api.get('/feedbacks', {
     params: {
       limit,

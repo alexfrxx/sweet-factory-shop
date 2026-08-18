@@ -24,7 +24,7 @@ function renderFeedbacks(feedbacks) {
   const markup = feedbacks
     .map(feedback => {
       return `
-      <li class="feedback-item">
+      <li class="swiper-slide feedback-item">
 
         <div class="feedback-rating">
   ${createStars(feedback.rate)}
