@@ -133,7 +133,10 @@ img {
   height: 1px;
   background-color: #080c0c;
   transform: scaleX(0);
-  transition: transform 0.4s ease;
+  transition:
+    transform 0.4s ease,
+    top 0.25s ease,
+    bottom 0.25s ease;
 }
 
 .link:hover::after,
