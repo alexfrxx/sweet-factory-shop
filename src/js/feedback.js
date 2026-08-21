@@ -1,3 +1,5 @@
+'use strict';
+
 import { getFeedbacks } from './axios.js';
 import { createRatingMarkup } from './modal.js';
 
@@ -30,7 +32,6 @@ function renderFeedbacks(feedbacks) {
 async function initFeedback() {
   try {
     const data = await getFeedbacks();
-    console.log(data);
     renderFeedbacks(data.feedbacks);
   } catch (error) {
     console.error(error);

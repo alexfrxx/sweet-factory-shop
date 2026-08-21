@@ -9,3 +9,4 @@ import './js/feedback';
 import './js/modal';
 import './js/render';
 import './js/swiper';
+import './js/bestsellers';

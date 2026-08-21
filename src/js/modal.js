@@ -1,3 +1,5 @@
+'use strict';
+
 import { getDessertById } from './axios.js';
 import spriteUrl from '../img/sprite.svg';
 import iziToast from 'izitoast';

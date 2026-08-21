@@ -1,4 +1,5 @@
-// Import SVG sprite via Vite
+'use strict';
+
 import spriteUrl from '../img/sprite.svg';
 
 function createCardMarkup(dessert) {

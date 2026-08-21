@@ -1,3 +1,5 @@
+'use strict';
+
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -50,6 +52,35 @@ const feedbackSwiper = new Swiper('.feedback-swiper', {
 
   breakpoints: {
     768: {
+      slidesPerView: 3,
+    },
+  },
+});
+
+export const bestsellersSwiper = new Swiper('.bestsellers-swiper', {
+  modules: [Navigation, Pagination],
+
+  slidesPerView: 1,
+  spaceBetween: 24,
+  loop: true,
+  direction: 'horizontal',
+
+  pagination: {
+    el: '.bestsellers .swiper-pagination',
+    clickable: true,
+  },
+
+  navigation: {
+    nextEl: '.bestsellers-button-next',
+    prevEl: '.bestsellers-button-prev',
+  },
+
+  breakpoints: {
+    768: {
+      slidesPerView: 2,
+    },
+
+    1440: {
       slidesPerView: 3,
     },
   },

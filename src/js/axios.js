@@ -1,3 +1,5 @@
+'use strict';
+
 import axios from 'axios';
 
 const api = axios.create({
@@ -33,6 +35,17 @@ export async function getFeedbacks(limit = 6, page = 1) {
     params: {
       limit,
       page,
+    },
+  });
+
+  return response.data;
+}
+
+export async function getBestsellers(page = 1, limit = 7) {
+  const response = await api.get('/desserts?type=popular', {
+    params: {
+      page,
+      limit,
     },
   });
 
