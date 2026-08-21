@@ -33,7 +33,7 @@ function toggleLoader(show) {
 
 dessertsList.addEventListener('click', onOpenModal);
 
-async function onOpenModal(event) {
+export async function onOpenModal(event) {
   const btn = event.target.closest('.js-open-modal');
 
   if (!btn) return;
@@ -75,7 +75,6 @@ async function onOpenModal(event) {
   }
 }
 
-////////// RATING
 export function createRatingMarkup(rate) {
   const fullStars = Math.floor(rate);
   const hasHalfStar = rate % 1 !== 0;
@@ -101,7 +100,6 @@ export function createRatingMarkup(rate) {
   return markup;
 }
 
-// ////////////////////EXIT FROM FORM
 closeModalBtn.addEventListener('click', onCloseModal);
 modal.addEventListener('click', onBackdropClick);
 document.addEventListener('keydown', onEscapePress);

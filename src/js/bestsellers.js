@@ -3,8 +3,10 @@
 import { getBestsellers } from './axios';
 import spriteUrl from '../img/sprite.svg';
 import { bestsellersSwiper } from './swiper';
+import { onOpenModal } from './modal';
 
 const list = document.querySelector('.bestsellers-list');
+list.addEventListener('click', onOpenModal);
 
 async function getData() {
   try {

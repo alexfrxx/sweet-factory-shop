@@ -55,7 +55,6 @@ export function createDessertCardsMarkup(desserts = []) {
 }
 
 export function createCategoriesMarkup(categories = []) {
-  // 1. Generate options for <select> element (Mobile & Tablet)
   const selectDefaultOption = `<option value="all" selected>Всі десерти</option>`;
 
   const selectOptions = categories
@@ -74,7 +73,6 @@ export function createCategoriesMarkup(categories = []) {
     </select>
   `;
 
-  // 2. Generate buttons for <ul> list (Desktop)
   const allCategoryBtn = `
     <li class="category-item">
       <button type="button" class="btn category-btn active" data-category="all">
@@ -105,6 +103,5 @@ export function createCategoriesMarkup(categories = []) {
     </ul>
   `;
 
-  // Return both markup elements to render in DOM
   return `${selectMarkup}${listMarkup}`;
 }
