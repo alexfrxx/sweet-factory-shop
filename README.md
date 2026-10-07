@@ -5,6 +5,7 @@ technologies. The project presents a clean and engaging interface for browsing
 sweet products and interacting with different sections of the website.
 
 🌐 **Live Demo:** https://alexfrxx.github.io/sweet-factory-shop/
+
 <img width="100%" alt="Sweet factory" src="https://github.com/user-attachments/assets/b7696c7d-c109-4ca2-afca-2fe5c85c16e3" />
 
 ## ✨ Features
