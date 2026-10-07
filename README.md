@@ -132,3 +132,5 @@ Repository: https://github.com/alexfrxx/sweet-factory-shop
 ## 📄 License
 
 This project is licensed under the ISC License.
+
+<img width="100%" alt="Sweet factory" src="https://github.com/user-attachments/assets/b7696c7d-c109-4ca2-afca-2fe5c85c16e3" />
